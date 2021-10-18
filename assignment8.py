@@ -28,9 +28,9 @@ class HumanPlayer(Player):
     @staticmethod
     def getDecision(turnPts):
         """Returns True if player decided to roll"""
-        ch = input('keep going (r) or pass (h)? ')
+        ch = input('Enter "h" to HOLD or "r" to ROLL? ')
         while ch not in ['r', 'h']:
-            ch = input('keep going (r) or pass (h)? ')
+            ch = input('Enter "h" to HOLD or "r" to ROLL? ')
         return ch == 'r'
 
     def __str__(self):
@@ -47,7 +47,7 @@ class ComputerPlayer(Player):
         return turnPts < min(25, 100 - self.getScore())
 
     def __str__(self):
-        return "A.I({}) : {:d} pts.".format(self.name, self.score)
+        return "Computer({}) : {:d} pts.".format(self.name, self.score)
 
 
 class PlayerFactory:
